@@ -1,0 +1,9 @@
+.main-layout {
+    width: 100vw;
+    padding: 2rem;
+    .taskbar-container{
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 2rem;
+    }
+}

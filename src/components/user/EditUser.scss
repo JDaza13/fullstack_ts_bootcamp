@@ -1,0 +1,12 @@
+
+.edit-user-container{
+    min-width: 640px;
+    max-width: 1360px;
+    margin: 0 auto;
+    .edit-user-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
