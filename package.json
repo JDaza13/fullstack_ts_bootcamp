@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --open --host 0.0.0.0",
     "dev:spa": "vite --open --host 0.0.0.0",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && npm run build:api",
+    "build:api": "tsc src/server/index.ts --outDir build/api --rootDir src/server --target ES6 --module ES6 --strict --esModuleInterop --skipLibCheck --forceConsistentCasingInFileNames --moduleResolution node && node postbuildJSExt.js",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

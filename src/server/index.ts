@@ -2,6 +2,7 @@ import express from "express";
 import userRouter from "./controllers/userController";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+
 import "dotenv/config";
 
 const DB_URL = `${process.env.MONGODB_URL}/devbootcamp`;
@@ -29,3 +30,5 @@ app.use("/api/user", userRouter);
     console.error(error);
   }
 })();
+
+export default app;
