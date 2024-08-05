@@ -3,6 +3,8 @@ import * as fs from "fs";
 import path from "path";
 import type { Plugin } from "vite";
 
+const obfuscationMessage = "Obfuscated sourcemap generated";
+
 /**
  * Generates an obfuscated filename by inserting an crypto-generated string in the original filename
  * @param source the original filename
@@ -30,6 +32,7 @@ export default function myPlugin(assetsDir: string): Plugin {
             const source = path.join(assetsDir, file);
             const resultSourcemapFilename = generateObfuscatedFilename(source);
             fs.copyFileSync(source, resultSourcemapFilename);
+            console.log(`${obfuscationMessage}: ${resultSourcemapFilename}`);
           }
         });
       });
